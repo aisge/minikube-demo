@@ -1,4 +1,4 @@
-# minikube-demo
+# minikube-demox
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 

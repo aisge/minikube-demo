@@ -14,6 +14,12 @@ spec:
       labels:
         app: appsrv
     spec:
+      initContainers:
+        - name: check-db-ready
+          image: postgres:14
+          command: [ 'sh', '-c',
+            'until pg_isready -h postgres -p 5432;
+            do echo waiting for database; sleep 2; done' ]
       containers:
         - name: appsrv
           image: ghcr.io/aisge/backend:latest
@@ -22,3 +28,16 @@ spec:
           ports:
             - containerPort: 8080
 #          command: [ "tail", "-f", "/dev/null" ]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: appsrv
+
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    component: appsrv

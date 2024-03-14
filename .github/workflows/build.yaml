@@ -16,3 +16,5 @@ jobs:
         run: | 
           mvn -B package
           ls -lh target
+          cp src/main/docker/Dockerfile ./target/
+          docker build --tag ghcr.io/aisge/backend:latest ./target

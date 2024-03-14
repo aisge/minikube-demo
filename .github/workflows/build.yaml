@@ -23,4 +23,4 @@ jobs:
           mvn -B package
           ls -lh target
           cp src/main/docker/Dockerfile ./target/
-          docker build --tag ghcr.io/{{ github.repository }}/backend:latest ./target
+          docker build --tag ghcr.io/${{ github.repository }}/backend:latest ./target

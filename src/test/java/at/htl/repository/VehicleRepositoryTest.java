@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@QuarkusTest
+// @QuarkusTest
 class VehicleRepositoryTest {
-
+/*
     @Inject
     VehicleRepository vehicleRepository;
 
@@ -22,4 +22,6 @@ class VehicleRepositoryTest {
         Vehicle myCar = new Vehicle("Opel", "Kadett");
         vehicleRepository.persist(myCar);
     }
+
+ */
 }

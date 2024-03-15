@@ -40,4 +40,4 @@ spec:
       targetPort: 8080
       protocol: TCP
   selector:
-    component: appsrv
+    app: appsrv
